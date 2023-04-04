@@ -1,0 +1,12 @@
+.section {
+    border-radius: 50%;
+    border: 10px solid #0A846E;
+    width: 337px;
+    height: 337px;
+}
+
+.img {
+    width: 337px;
+    height: 337px;
+    border-radius: 50%;
+}
