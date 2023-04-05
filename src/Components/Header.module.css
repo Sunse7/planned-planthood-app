@@ -3,12 +3,11 @@
     height: 82px;
     width: auto;
     display: flex;
+    align-items: center;   
 }
 
 .img {
     height: 48px;
     width: 49px;
-    position: absolute;
-    /* top: 17px;
-    left: 38px; */
+    margin: 0 2rem;
 }
