@@ -14,9 +14,30 @@ function Home() {
   const [plantDate, setPlantDate] = useState('');
   const [url, setUrl] = useState('');
   const [assignee, setAssignee] = useState('');
-  const [plantInfo, setPlantInfo] = useState([]);
   const [date, setDate] = useState('');
 
+  let startPlants = [
+    {
+      plantName: 'Tomat',
+      plantDate: '2023-04-05',
+      url: 'https://images.unsplash.com/photo-1565195093469-82a4a4d00ed7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHRvbWF0byUyMHBsYW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
+      assignee: 'Lucky the dog'
+    },
+    {
+      plantName: 'Chili',
+      plantDate: '2023-04-01',
+      url: 'https://images.unsplash.com/photo-1614796703136-5d26c56f839a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGNoaWxpJTIwcGxhbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+      assignee: 'Niclas chilli lover'
+    },
+    {
+      plantName: 'Katt gräs',
+      plantDate: '2023-04-03',
+      url: 'https://images.unsplash.com/photo-1533460004989-cef01064af7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z3Jhc3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
+      assignee: 'Azmodan the cat'
+    }
+  ];
+
+  const [plantInfo, setPlantInfo] = useState([startPlants]);
 
   //Ska man ha några start plantor i listan?
 
@@ -57,7 +78,10 @@ function Home() {
         <PrimaryButton title='LÄGG TILL' action={addPlantInfo} />
         <Divider />
         <h4>Våra planerade planteringar:</h4>
-        <PlantCard /> {/*Mappa ut korten, om listan är tom visa: "Det finns inga planerade planteringar än"*/}
+        {
+          plantInfo.map((plant, i) => <PlantCard key={i} plant={plant} />)
+        }
+        {/* <PlantCard /> Mappa ut korten, om listan är tom visa: "Det finns inga planerade planteringar än" */}
         <PrimaryButton title='Planterade Plantor' action={() => navigate('/plantedplants')} />
     </section>
   );
