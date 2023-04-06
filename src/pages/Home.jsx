@@ -37,9 +37,7 @@ function Home() {
     }
   ];
 
-  const [plantInfo, setPlantInfo] = useState([startPlants]);
-
-  //Ska man ha några start plantor i listan?
+  const [plantInfo, setPlantInfo] = useState(startPlants);
 
   function addPlantInfo(e) {
     e.preventDefault();
@@ -81,7 +79,7 @@ function Home() {
         {
           plantInfo.map((plant, i) => <PlantCard key={i} plant={plant} />)
         }
-        {/* <PlantCard /> Mappa ut korten, om listan är tom visa: "Det finns inga planerade planteringar än" */}
+       
         <PrimaryButton title='Planterade Plantor' action={() => navigate('/plantedplants')} />
     </section>
   );
