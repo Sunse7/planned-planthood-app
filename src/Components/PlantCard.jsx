@@ -7,10 +7,12 @@ function PlantCard({ plant }) {
   return (
     <article className={styles.article}>
       <img src={url} alt="Picture of a plant" className={styles.img} />
-      <h4>{plantName}</h4>
-      <p>{plantDate}</p>
-      <p>{assignee}</p>
-      <section>
+      <section className={styles.nameDateContainer}>
+        <h4>{plantName}</h4>
+        <p>{plantDate}</p>
+      </section>
+      <section className={styles.nameDateContainer}>
+        <p>{assignee}</p>
         <DeleteButton />
       </section>
     </article>

@@ -5,6 +5,7 @@
     max-height: 400px;
     box-shadow: 3px 4px 4px 0px #00000040;
     border-radius: 4px;
+    margin-bottom: 2.5rem;
 }
 
 .img {
@@ -12,4 +13,11 @@
     max-height: auto;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
+}
+
+.nameDateContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1rem;
 }
