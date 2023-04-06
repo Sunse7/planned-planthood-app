@@ -14,7 +14,6 @@ function Home() {
   const [plantDate, setPlantDate] = useState('');
   const [url, setUrl] = useState('');
   const [assignee, setAssignee] = useState('');
-  const [date, setDate] = useState('');
 
   let startPlants = [
     {
@@ -48,7 +47,8 @@ function Home() {
       url: url,
       assignee: assignee
     }
-    setPlantInfo(plantToAdd, ...plantInfo);
+    setPlantInfo([plantToAdd, ...plantInfo]);
+    // console.log(plantToAdd, 'plant');
   }
 
   return (
