@@ -5,3 +5,11 @@
     text-align: start;
     margin-bottom: 1rem;
 }
+
+.input {
+    height: 2rem;
+    border: 1px solid #03382F;
+    background-color: #fff;
+    border-radius: 4px;
+    color: rgb(56, 56, 56);
+}

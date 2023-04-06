@@ -4,7 +4,7 @@ function LabeledInput({title, type, placeholder, action, value}) {
     return ( 
         <section className={styles.section}>
             <label>{title}</label>
-            <input type={type} placeholder={placeholder} value={value} onChange={action} />
+            <input className={styles.input} type={type} placeholder={placeholder} value={value} onChange={action} />
         </section>
      );
 }

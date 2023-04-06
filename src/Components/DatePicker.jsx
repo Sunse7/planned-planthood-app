@@ -7,7 +7,7 @@ function DatePicker({value, title, action}) {
     return ( 
         <section className={styles.section}>
             <label>{title}</label>
-            <input type="date" onChange={(e) => action(e.target.value)} value={value} ref={dateInputRef} />
+            <input className={styles.input} type="date" onChange={(e) => action(e.target.value)} value={value} ref={dateInputRef} />
         </section>
      );
 }

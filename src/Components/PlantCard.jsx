@@ -9,7 +9,7 @@ function PlantCard({ plant }) {
       <img src={url} alt="Picture of a plant" className={styles.img} />
       <section className={styles.nameDateContainer}>
         <h4>{plantName}</h4>
-        <p>{plantDate}</p>
+        <h4>{plantDate}</h4>
       </section>
       <section className={styles.nameDateContainer}>
         <p>{assignee}</p>
