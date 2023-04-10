@@ -1,7 +1,7 @@
 import DeleteButton from "./DeleteButton";
 import styles from "./PlantCard.module.css";
 
-function PlantCard({ plant }) {
+function PlantCard({ plant, action }) {
   const { plantName, plantDate, url, assignee } = plant;
 
   return (
@@ -13,7 +13,7 @@ function PlantCard({ plant }) {
       </section>
       <section className={styles.nameDateContainer}>
         <p>{assignee}</p>
-        <DeleteButton />
+        <DeleteButton action={action} />
       </section>
     </article>
   );

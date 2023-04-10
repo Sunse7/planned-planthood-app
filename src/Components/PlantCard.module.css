@@ -1,7 +1,7 @@
 .article {
     background-color: #fff;
     color: #000;
-    max-width: 300px;
+    max-width: 250px;
     max-height: 400px;
     box-shadow: 3px 4px 4px 0px #00000040;
     border-radius: 4px;
@@ -9,8 +9,8 @@
 }
 
 .img {
-    max-width: 300px;
-    max-height: auto;
+    width: 250px;
+    height: 166px;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
 }

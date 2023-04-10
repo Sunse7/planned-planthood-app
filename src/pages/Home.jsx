@@ -29,7 +29,7 @@ function Home() {
       assignee: 'Niclas chilli lover'
     },
     {
-      plantName: 'Katt gräs',
+      plantName: 'Kattgräs',
       plantDate: '2023-04-03',
       url: 'https://images.unsplash.com/photo-1533460004989-cef01064af7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z3Jhc3N8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60',
       assignee: 'Azmodan the cat'
@@ -48,39 +48,63 @@ function Home() {
       assignee: assignee
     }
     setPlantInfo([plantToAdd, ...plantInfo]);
-    // console.log(plantToAdd, 'plant');
+    setPlantName('');
+    setPlantDate('');
+    setUrl('');
+    setAssignee('');
+  }
+
+  function removePlant(e) {
+    //Remove plant from plantInfo, move it to a new list? Show new list in Planterade plantor?
+    console.log('removePlant function');
+    
   }
 
   return (
-    <section className={styles.section}>
-      <section>
+    <section className={styles.wrapper}>
+      <section className={styles.infoContainer}>
         <RoundImage image='https://images.unsplash.com/photo-1591857177593-aec16c2d8f60?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dG9tYXRvJTIwcGxhbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60' />
-        <section>        
+        <section className={styles.textContainer}>        
           <h2>Säsong att så</h2>
-          <p>
+          <p className={styles.infoText}>
           Våren är äntligen här i kollektivet! Lorem ipsum dolor sit amet
           consectetur. Sit venenatis arcu nunc consectetur neque. Vel amet netus
           amet eu elit.
           </p>
+          <section className={styles.buttonContainer}>
           <PrimaryButton title='SÅ-TIPS' action={() => navigate('sowtips')} />
+          </section>
         </section>
       </section>
+      <section className={styles.dividerContainer}>
         <Divider />
-        <h2>Lägg till planterade planteringar</h2>
-        <RoundImage image='https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHRvbWF0byUyMHBsYW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60' />
-        <h4>Ny sådd:</h4>
-        <LabeledInput title='Frönamn' placeholder='Tomat' type='text' action={setPlantName} value={plantName} />
-        <DatePicker title='Datum för sådd' action={setPlantDate} value={plantDate} />
-        <LabeledInput title='URL, exempelbild' placeholder='https://images.unsplash.co..' type='url' action={setUrl} value={url} />
-        <LabeledInput title='Planterare' placeholder='Emma på 4an' type='text' action={setAssignee} value={assignee} />
-        <PrimaryButton title='LÄGG TILL' action={addPlantInfo} />
+        <h3>Lägg till planterade planteringar</h3>
+      </section>
+      <section className={styles.addContainer}>
+        <section>
+          <h4>Ny sådd:</h4>
+          <LabeledInput title='Frönamn' placeholder='Tomat' type='text' action={setPlantName} value={plantName} />
+          <LabeledInput title='URL, exempelbild' placeholder='https://images.unsplash.co..' type='url' action={setUrl} value={url} />
+          <PrimaryButton title='LÄGG TILL' action={addPlantInfo} />
+        </section>
+        <section className={styles.dateAssigneeContainer}>
+          <DatePicker title='Datum för sådd' action={setPlantDate} value={plantDate} />
+          <LabeledInput title='Planterare' placeholder='Emma på 4an' type='text' action={setAssignee} value={assignee} />
+        </section>
+        < RoundImage image='https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHRvbWF0byUyMHBsYW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60' />
+      </section>
+      <section className={styles.dividerContainer}>
         <Divider />
-        <h4>Våra planerade planteringar:</h4>
+        <h3>Våra planerade planteringar:</h3>
+      </section>
+      <section className={styles.cardContainer}>
         {
-          plantInfo.map((plant, i) => <PlantCard key={i} plant={plant} />)
+          plantInfo.map((plant, i) => <PlantCard key={i} plant={plant} action={removePlant} />)
         }
-       
+      </section>
+      <section className={styles.plantedButtonContainer}>
         <PrimaryButton title='Planterade Plantor' action={() => navigate('/plantedplants')} />
+      </section>
     </section>
   );
 }
